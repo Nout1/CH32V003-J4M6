@@ -20,16 +20,21 @@ The code was written using the MountRiver IDE
 The trick used here is to exploid the fact that LEDs conduct current in one direction, similar like diodes do.
 And the fact that the reverse breakdown for most LEDs well exceeds 5V, so we can reverse the polarity without damaging the LEDs
 
-The light sequence for the traffic light is shown below.
-Red, Green and yellow aread for both traffic light are depicted over time
-![image](https://github.com/user-attachments/assets/263bb37b-7b26-48a8-ae67-b0aaaebb1484)
+The light sequence over time for both traffic lights is shown below.
+For example 16 cycles Red, followed by 12 cycles Green and 3 cycles yellow.
+The second light does the same but is 16 cycles shifted in time.
+
+![image](https://github.com/user-attachments/assets/64e99518-fd01-41a9-ab39-a81e0b8819c6)
 
 Converted into a timing diagram we get
+
 ![image](https://github.com/user-attachments/assets/2f71ac09-e697-48c5-bba9-104499cdf25e)
+
+This timing diagram can be directly implementd into code by using 6 GPIOs, but our goal is to save GPIOs and if possible lower overall cost.
 
 # Option 1: Schematic and function description:
 
-The 6 signals can be optimized to only 4 signals and still drive all LEDs (without additional hardware) using the schematic below
+In the schematic below the 6 signals have been optimized to only 4 signals to still drive all LEDs and without adding any additional hardware.
 
 ![image](https://github.com/user-attachments/assets/892a00ff-bb77-4b90-aca6-3b825df8fe5a)
 
