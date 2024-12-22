@@ -60,7 +60,7 @@ For the wiring, this still uses only 4 wires for each trafic light
 * Trafic light 1 (3 LEDs combined): 4 signals: 5V, RED, YEL1orYEL2, GR1orGR2
 * Trafic light 2 (3 LEDs combined): 4 signals: GND, RED, YEL1orYEL2, GR1orGR2
 
-![image](https://github.com/user-attachments/assets/e8184681-b141-4f7a-9369-34955ffb38e0)
+![image](https://github.com/user-attachments/assets/8fa2bb8b-fbd3-4763-93f2-14c9fce2cc37)
 
 # Option 3: optimization to only use 2 GPIOs, Schematic and function description:
 Since "YEL1orYEL2" is equal to INV("GR1orGR2") and only sources current to the LEDs, we can also omit "YEL1orYEL2" and replace it by a PNMOS controlled by "GR1orGR2" 
