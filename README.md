@@ -79,6 +79,12 @@ In that way both trafic lights need 5 wires
 
 ![image](https://github.com/user-attachments/assets/5be2b290-3d92-4d49-937e-39a3e33a8a57)
 
+# Option 4: 3 GPIOs and no blinking
+A mixed variant of previous options is shown below. 
+This option makes YELLOW dependent on GREEN, so it supports no blinking, but still used only 3 GPIOs and 4 wires to each traffic light, now at the cost of 1 PMOS
+
+![image](https://github.com/user-attachments/assets/d4927ea3-7d85-4b17-81c1-29cb8158ea9f)
+
 # Dimensioning and building the circuit:
 
 **Resistors: **The GPIOs on CH32V003 can sink and source each 8mA (to stay in spec) and max 20mA (to not damage).
