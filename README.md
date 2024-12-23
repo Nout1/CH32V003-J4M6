@@ -81,7 +81,8 @@ In that way both trafic lights need 5 wires
 
 # Option 4: 3 GPIOs and no blinking
 A mixed variant of previous options is shown below. 
-This option makes YELLOW dependent on GREEN, so it supports no blinking, but still used only 3 GPIOs and 4 wires to each traffic light, now at the cost of 1 PMOS
+This option makes YELLOW dependent on GREEN, so it supports no blinking and  still used only 3 GPIOs at the cost of 1 PMOS
+Nice about this option: You can keep 3 resistors **on the mother board** and still wire all LEDs in each traffic light with the same 4 wires. Great!
 
 ![image](https://github.com/user-attachments/assets/d4927ea3-7d85-4b17-81c1-29cb8158ea9f)
 
