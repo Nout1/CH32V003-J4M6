@@ -10,8 +10,9 @@ Flickering is more than just a random generator controlling the pulse-time of a 
 That concept would completely ignore the physical reality.
 
 **First:** The human eye perceives brightness logarithmically, not linear. 
-So to make a LED appear to change its brightness linearly, the duty cycle of the PWM needs to be adjusted to the brightness raised to a power, usually around 2.2
-For simplicity we use a power of 2 (=quadratic).
+So to make a LED appear to change its brightness linearly, the duty cycle of the PWM needs to be adjusted to the brightness raised to a power, usually around 2.2.
+
+For simplicity we will use a power of 2 (=quadratic).
 
 **Second:** Flicking does not vary from fully on to fully off but makes more limited brightness variations.
 
