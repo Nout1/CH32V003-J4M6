@@ -18,7 +18,7 @@ WCH his default IDE is called Mounriver Studio. It can be found here: http://www
 Also the Arduino IDE, PlatformIO and other IDEs support this MCU family.
 
 An alternative resource is https://github.com/cnlohr/ch32v003fun.
-It also shows some demos but does not use HAL.
+It also shows some examples but does not use HAL.
 
-If you want to convert from HAL to ch32v003fun or opposit, just copy/past the code in ChatGPT and as ChatGPT to conver the code to WCH HAL or ch32v003fun syntax.
+If you want to convert from HAL to ch32v003fun syntax or opposit, just copy/past the code in ChatGPT and ask ChatGPT to convert the code to WCH HAL or ch32v003fun syntax.
 It will do the job for you.
