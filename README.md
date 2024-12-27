@@ -11,6 +11,7 @@ This repository adds a set of additional demos.
 
 # IDE used
 
-I've used the WCH default IDE called Mounriver Studio. It can be found here: http://www.mounriver.com
+I've used the WCH default IDE called Mounriver Studio. It can be found here: http://www.mounriver.com.
+
 Also the Arduino IDE, PlatformIO and other IDEs support this MCU family.
 
