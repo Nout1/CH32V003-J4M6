@@ -7,7 +7,7 @@ Besides an 8-pin version also 16-pin, 20-pin and a 40-pin versions exist, which 
 Also these variants can easy compete with ATTINY84 or an arduino, again at a much lower cost.
 Find much more information about these MCUs on WCH's webpage: https://www.wch-ic.com
 
-Unfortunately not so many projects exist that use this MCU.
+Unfortunately not so many projects yet exist that use this MCU.
 
 This repository intends to add some more demos and what I learned while making them.
 
