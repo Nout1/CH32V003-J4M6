@@ -24,3 +24,11 @@ Third we convert the generated flicker value into a brightness by applying a sca
 
 See the code snipped to do all this. 
 
+# Implementation: One PWM on PC1 or add a 2nd PWM on PC2 to drive a 2nd LED.
+Given we have 6 GPIOs and only one is used for a flickering LED, why not add a 2nd PWM and 2nd LED?
+Both PWMs use the same timer, TIM2, set to a frequency of 200Hz with a pulse between 0 and 999 (0.1% resolution).
+Both PWM are controlled by their own flicker value and each drive a LED.
+
+# What I learned while doing this project:
+Understranding remapping is essential for using the 8-pin versions of CH32V003, since many functions are multiplexed to the one pin.
+As can be found in the documentation, 4 pin mappings are supported:
