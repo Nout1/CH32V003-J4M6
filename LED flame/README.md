@@ -1,11 +1,11 @@
-#Introduction
+# Introduction
 Flickering flames, based on a LED, are popular to simulate a fireplace, a tourch or a candle.
 Personally I've used a flickering flame to simulate a fireplace in a doll house as shown below.
 The 3D model comes from Akoffeman, [thingiverse](https://www.thingiverse.com/thing:4503449)
 
 
 
-#Steps to achieve linear brightness perception:
+# Steps to achieve linear brightness perception:
 Flickering is more than just a random generator controlling the pulse-time of a PWM signal.  
 That concept would completely ignore the physical reality.
 **First:** The human eye perceives brightness logarithmically, not linear. 
