@@ -1,18 +1,18 @@
 # Easy, small, cheap Traffic-Light
 Tiny, cheap 2-way traffic light, using 4, 3 or even only 2 GPIOs demonstrated on CH32V003-J4M6
 
-Many schematics for traffic lights have been published, often using an arduino or 555 timer chips.
+Many schematics for traffic lights have been published, often using an arduino or cd4017 + 555 timer chips.
 The traffic light presented here differenciates by its simplicity, very small footprint and a very low cost.
 Still it's a real 2-way traffic light using a red, yellow and green LED for each light.
 Limitation: it work on 3.3V up to 5V
 
 Three versions will be presented:
-* Option1, using 4 GPIOs offering more freedoms
+* Option1, using 4 GPIOs and offering more freedoms
 * Option2, an optimization of option 1 using 3 GPIOs at the cost of adding 1 NMOS
 * Option3, a minimal solution only using 2 GPIOs at the cost of adding 1 NMOS + 1 PMOS
 
-All schematics use the very cheap CH32V003-J4M6 but in fact any other MCU including arduino, ESP, attiny, pic etc... could be used
-The code was written using the MountRiver IDE
+All schematics use the very cheap CH32V003-J4M6 MCU but in fact any other MCU, including arduino, ESP, attiny, pic etc... could be used
+The code was written using the free MounRiver IDE from WCH
 
 # How it works:
 
@@ -20,10 +20,8 @@ The trick used here is to exploid the fact that LEDs conduct current in one dire
 And the fact that the reverse breakdown for most LEDs well exceeds 5V, so we can reverse the polarity without damaging the LEDs
 
 The light sequence over time, for both traffic lights, as well as the timing diagram are shown below.
-For example the first ligth eluminates 16 cycles red, followed by 12 cycles green and 3 cycles yellow (LEDs called RED1, GR1 and YEL1)
-The second light does the same but is 16 cycles shifted in time. (LEDs called RED2, GR2 and YEL2)
-Notice that we have made the signals to drive green and yellew LEDs 100% independent. 
-This allows us to choose if yellow leds should be "static" or for example "blink". In the timing diagram a blinking yellow LED is assumed.
+For example the first traffic ligth (Eg. North and South) eluminates 16 cycles red, followed by 12 cycles green and 3 cycles yellow (LEDs called RED1, GR1 and YEL1)
+The second traffic light (east and west) does the same but is 16 cycles shifted in time. (LEDs called RED2, GR2 and YEL2)
 
 ![image](https://github.com/user-attachments/assets/54dc4336-8bfd-4ae0-b32c-e769c1f5cb1c)
 
@@ -32,7 +30,8 @@ This timing diagram could be directly implemented into code by using 6 GPIOs. Ou
 # Option 1: 4 GPIOs, Schematic and function description:
 
 In the schematic below, the 6 signals have been optimized to only 4 signals, still driving all the LEDs and without adding any additional hardware.
-Notice that only 3 resistors are required. This is possible because LEDs of the same color never conduct at the same time **and** have a very similar forward voltage, so we can use a common resisor for them.
+Notice that the signals to drive green and yellew LEDs stay 100% independent. This allows us to choose if yellow leds should be "static" or for example "blink" while green leds remain "static". In the timing diagram a blinking yellow LED is assumed.
+Notice that only 3 resistors are required. This is possible because LEDs of the same color never conduct at the same time **and** identical LEDs have a very similar forward voltage, so we can use a common resisor for them.
 
 ![image](https://github.com/user-attachments/assets/892a00ff-bb77-4b90-aca6-3b825df8fe5a)
 
