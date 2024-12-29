@@ -8,7 +8,7 @@ Also these variants can easy compete with ATTINY84 or an arduino, again at a muc
 Given the lower cost, the popularity for these MCUs is rapidly increasing.
 Find much more information about them on WCH's webpage: https://www.wch-ic.co
 
-This repository intends to add some more example projecte and what I learned while making them.
+This repository intends to add some more example projects and what I learned while making them.
 
 # IDE used
 
