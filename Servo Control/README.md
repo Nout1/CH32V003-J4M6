@@ -29,4 +29,6 @@ A none blocking, linear approach, is given below. We cut the movement into small
 Closer to real physics, many objects accelerate fast but slow down when approaching their end goal. Eg. throw an appel to the sky. The higher the apple gets the more itnslows down. Or move your head from left to look to something moving on the right. You accelerate fast and slow done once then object becomed visible to get a sharp image.
 To emulate a similar effect on our servo we can use again a step but make it non-linear.
 The 1 line code below is exactly doing that. We take the difference between initial start and end agles, multiply it by Eg. 0.95 and subtract it from the final end angle. The result is depicted below.
-
+Every step we subtract a smaller fraction from the end angle until the fraction gets neglectable and the`final end angle is reached. This more natural way of movement results is a smoother behavior of mechanical objects and reduces power spikes.
+Setting the 0.95 value closer to one limits the initial acceleration at the cost of a slower reaction speed. Updating the new pwm pulse value faster or slower also affect the reaction time. Ads also the pwm frquency sets a limit to how fast updates can be made or otherwise multiple steps will merge into one update.
+Some experimenting with these 3 parameters will quickly show what works best for your specific case.
