@@ -15,7 +15,7 @@ prescaler at 64 => 1 step is 13.33usec so in 20msec we have 1500 steps => 180 de
 prescaler at 32 => 1 step is 6.67usec so in 20msec we have 3000 steps => 180 degree = 2msec will have 300 steps, or 0.6 degree ot resolution.
 The timers on ch32v003 are 16bit, so can easy support 1500 or 3000 steps
 
-# setting up a PWM on PA1 #### (for PWM on PC1 or PC2 see LED flicking flame demo)
+# setting up PWM on PA1 (for PWM on PC1/PC2 see LED flicking flame demo)
 
 
 #slow down tue linear movement of an angle
