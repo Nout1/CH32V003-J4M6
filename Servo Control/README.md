@@ -15,8 +15,8 @@ prescaler at 64 => 1 step is 13.33usec so in 20msec we have 1500 steps => 180 de
 prescaler at 32 => 1 step is 6.67usec so in 20msec we have 3000 steps => 180 degree = 2msec will have 300 steps, or 0.6 degree ot resolution.
 The timers on ch32v003 are 16bit, so can easy support 1500 or 3000 steps
 
-#setting up a PWM on PA1 
-##(for PWM on PC1 or PC2 see LED flicking flame demo)
+# setting up a PWM on PA1 
+## (for PWM on PC1 or PC2 see LED flicking flame demo)
 
 
 #slow down tue linear movement of an angle
@@ -25,7 +25,7 @@ However this would result is a very abrupt reaction of the servo to accelerate a
 So in most cases we wat to slow down this reaction and more slowly move to the new angle.
 A none blocking, linear approach, is given below. We cut the movement into smaller steps and make every time step a small angle step.
 
-#non-linear angle moment
+# non-linear angle moment
 Closer to real physics, many objects accelerate fast but slow down when approaching their end goal. Eg. throw an appel to the sky. The higher the apple gets the more itnslows down. Or move your head from left to look to something moving on the right. You accelerate fast and slow done once then object becomed visible to get a sharp image.
 To emulate a similar effect on our servo we can use again a step but make it non-linear.
 The 1 line code below is exactly doing that. We take the difference between initial start and end agles, multiply it by Eg. 0.95 and subtract it from the final end angle. The result is depicted below.
