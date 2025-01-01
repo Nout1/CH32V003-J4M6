@@ -18,16 +18,17 @@ The timers on ch32v003 are 16bit, so can easy support 1500 or 3000 steps
 # Setting up PWM on PA1 (PWM on PC1/PC2 see flicking flame demo)
 
 
-# slow down the angle movement speed
+# Slow down the angle movement speed
 Changing the PWM pulse from one value to a next value can be done by changing the compare value.
 However this would result is a very abrupt reaction of the servo to accelerate as fast as possible, move, and stop abrupt with mechanical forces and counter reactions. Not really what we want.
 So in most cases we wat to slow down this reaction and more slowly move to the new angle.
 A none blocking, linear approach, is given below. We cut the movement into smaller steps and make every time step a small angle step.
 
-# non-linear angle moment
-Closer to real physics, many objects accelerate fast but slow down when approaching their end goal. Eg. throw an appel to the sky. The higher the apple gets the more itnslows down. Or move your head from left to look to something moving on the right. You accelerate fast and slow done once then object becomed visible to get a sharp image.
-To emulate a similar effect on our servo we can use again a step but make it non-linear.
-The 1 line code below is exactly doing that. We take the difference between initial start and end agles, multiply it by Eg. 0.95 and subtract it from the final end angle. The result is depicted below.
-Every step we subtract a smaller fraction from the end angle until the fraction gets neglectable and the`final end angle is reached. This more natural way of movement results is a smoother behavior of mechanical objects and reduces power spikes.
-Setting the 0.95 value closer to one limits the initial acceleration at the cost of a slower reaction speed. Updating the new pwm pulse value faster or slower also affect the reaction time. Ads also the pwm frquency sets a limit to how fast updates can be made or otherwise multiple steps will merge into one update.
-Some experimenting with these 3 parameters will quickly show what works best for your specific case.
+# Why consider a non-linear angle moment
+Closer to real physics, many objects accelerate fast but slow down when approaching their end goal. Eg. throw an appel to the sky. The higher the apple gets the more it slows down. Or move your head from left to look to something moving on the right. You initially accelerate fast to slow done once the object becomes visible to get a sharp image.
+To emulate a similar effect on a servo, again a step is used but it is made non-linear.
+Just 1 line of code is exactly doing that. First it takes the difference between initial start and end agles, muies it by Eg. 0.97 and subtracts this from the final end angle. The result is depicted below.
+Every step a smaller fraction is subtracted from the end angle until the fraction gets neglectable and the`final end angle is reached. This more natural way of movement results is a smoother behavior of mechanical objects and reduces power spikes.
+Setting the multipierbcloser to 1 limits the initial acceleration at the cost of a slower reaction speed. Updating the new PWM pulse value faster or slower also affects the reaction time. But recognize that the PWM frequency sets a limit to how fast updates can be made or otherwise multiple steps will merge into one update.
+Some experimenting with these parameters will quickly show what works best for your specific cases.
+
