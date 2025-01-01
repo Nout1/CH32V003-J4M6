@@ -18,7 +18,7 @@ The timers on ch32v003 are 16bit, so can easy support 1500 or 3000 steps
 # Setting up PWM on PA1 (PWM on PC1/PC2 see flicking flame demo)
 
 
-# slow down tue linear movement of an angle
+# slow down the angle movement speed
 Changing the PWM pulse from one value to a next value can be done by changing the compare value.
 However this would result is a very abrupt reaction of the servo to accelerate as fast as possible, move, and stop abrupt with mechanical forces and counter reactions. Not really what we want.
 So in most cases we wat to slow down this reaction and more slowly move to the new angle.
